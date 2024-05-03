@@ -1,0 +1,35 @@
+.custom {
+  line-height: 1.4;
+  font-size: 16px;
+  font-family: Averta, helvetica, arial, sans-serif;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 1px;
+  color: rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-position: 50% 0px;
+  background-size: cover;
+  min-height: 30vw;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 60%,
+      transparent 90%
+    ),
+    url("https://s1.ticketm.net/dam/a/bc8/d2f07a47-3a5a-4d7a-88a6-0c0c47da4bc8_SOURCE?width=1440&height=450&fit=cover&optimize=high&auto=webp");
+}
+.hr {
+  line-height: 1.4;
+  color: rgb(18, 18, 18);
+  font-size: 16px;
+  font-family: Averta, helvetica, arial, sans-serif;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: inherit;
+}
