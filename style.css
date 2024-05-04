@@ -70,6 +70,23 @@
 /* .lgbMrD{
   display: none;
 } */
-.link{
-  
+/* .jjYIOP {
+  width: 340px;
+  /* max-width: 340px; */
+  line-height: 1.15;
+  text-size-adjust: 100%;
+
+  overflow: hidden;
+
+  will-change: max-width;
+  border-radius: 4px 0px 0px 4px;
+
+  transition: max-width 0.3s linear 0s, min-width 0.3s linear 0.25s;
 }
+@media screen and (max-width: 768px) {
+  /* CSS styles that will apply when the screen width is at most 768px */
+  /* For example: */
+  .jjYIOP {
+    max-width: 0px;
+  }
+} */
