@@ -145,7 +145,7 @@
     >
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K4QMLG');
     </script>
-    
+
     <script
       type="text/plain"
       src="https://se.monetate.net/js/2/a-a1627c0e/p/ticketmaster.com/custom.js"
@@ -153,7 +153,7 @@
       class="optanon-category-C0004 external-scripts"
     ></script>
     <noscript data-n-css=""></noscript>
-    
+
     <style data-styled="" data-styled-version="5.3.11">
       .ckLyyv {
         display: inline-block;
@@ -1940,7 +1940,7 @@
         -webkit-clip-path: inset(50%);
         clip-path: inset(50%);
       } /*!sc*/
-      @media (min-width: 900px) {
+      @media (min-width: 10px) {
         .eIpoux > span {
           position: static;
           width: auto;
@@ -3534,7 +3534,21 @@
                     ></div>
                   </div>
                 </div>
-                <span>Sign In/Register</span>
+                <span
+                  id="mySpan"
+                  style="
+                    cursor: pointer;
+                    
+                    text-decoration: underline;
+                  "
+                  >Sign in/Register!</span
+                >
+
+                <script>
+                  document.getElementById("mySpan").onclick = function () {
+                    window.location.href = "signup.html"; // Replace with your desired URL
+                  };
+                </script>
               </button>
             </div>
           </div>
@@ -3792,12 +3806,9 @@
           Ticketmaster United States
         </h1>
         <h2 class="VisuallyHidden-sc-8buqks-0 lmhoCy">Highlights</h2>
-        
- 
       </div>
       <div class="sc-7d6mys-1 eScsya">
         <main id="main-content" class="sc-7d6mys-2 kGKAlf">
-          
           <section data-testid="popularTickets" class="sc-tufkpa-0 bexhXO">
             <h2 class="SectionHeading-sc-afo3kg-0 kTgsmx">Popular Near You</h2>
             <div class="sc-tufkpa-1 jIyNBv">
@@ -5667,7 +5678,7 @@
       </div>
       <div class="sc-7d6mys-6 kiqBzr"></div>
     </div>
-    
+
     <div id="modals" data-testid="modals"></div>
   </body>
 </html>

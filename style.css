@@ -33,3 +33,43 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: inherit;
 }
+.QWlNG {
+  background: url("https://auth.ticketmaster.com/static/en-us/images/left-panel-image.png")
+    0% 0% / cover rgb(31, 38, 45);
+}
+.fYvavw {
+  /* display: none; */
+  text-size-adjust: 100%;
+  font-family: inherit;
+  line-height: 1.15;
+  margin: 0px;
+  text-transform: none;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  color: rgb(38, 38, 38);
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  transition: border-color 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
+    z-index 0s ease 0.3s;
+  /* appearance: none; */
+  background-image: url('data:image/svg+xml;utf8,<svg  xmlns="http://www.w3.org/2000/svg"  width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><path d="M16 0H0v16h16z" /><path fill="%23262626" fill-opacity=".65" fill-rule="nonzero" d="M3.278 5.459A.75.75 0 0 0 2.221 6.52l5.263 5.24a.75.75 0 0 0 1.059 0L13.78 6.52a.75.75 0 0 0-1.06-1.06l-4.71 4.711L3.278 5.46z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px) 50%;
+  z-index: 1;
+  display: block;
+  height: 36px;
+  font-size: 14px;
+  border: 1px solid rgb(153, 153, 153);
+  width: 100%;
+  opacity: 0;
+  padding: 1px 42px 1px 13px;
+}
+
+/* .lgbMrD{
+  display: none;
+} */
+.link{
+  
+}
