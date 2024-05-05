@@ -434,6 +434,12 @@
     flex: 0 0 100%;
   }
 }
+/* @media screen and (max-width: 768px) {
+  .QWlNG {
+    display: none !important;
+   
+  }
+} */
 @media screen and (min-width: 1024px) {
   .bJijuu {
     max-width: 100%;
