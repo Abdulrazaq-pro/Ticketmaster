@@ -3,9 +3,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="style\signup.css" />
+
+    <!-- Add other Firebase services you need, like Firestore, Storage, etc. -->
   </head>
   <body>
-    <div id="root">
+    <div id="root" #signup-form>
       <div class="sc-pTUKB lgbMrD">
         <div class="sc-qWeur jzPeCS">
           <div class="sc-pDabv bbwRJT"></div>
@@ -80,7 +82,12 @@
                       </div>
                       <div class="sc-pkHUE fIcDpF">
                         <div class="sc-qQjAt kHbQih">
-                          <form novalidate="" class="sc-pJuJN dkhRER">
+                          <form
+                            id="signupForm"
+                            novalidate=""
+                            class="sc-pJuJN dkhRER"
+                          >
+                            <!-- <form novalidate="" class="sc-pJuJN dkhRER"> -->
                             <div class="sc-qQIyP tSGxo">
                               <div id="scrollContent" class="sc-qYFre hnJKGH">
                                 <div
@@ -120,12 +127,12 @@
                                       document.getElementById(
                                         "mySpan"
                                       ).onclick = function () {
-                                        window.location.href =
-                                          "signin.html"; // Replace with your desired URL
+                                        window.location.href = "signin.html"; // Replace with your desired URL
                                       };
                                     </script>
                                   </p>
                                   <div class="sc-plWPA kimhal">
+                                    <!-- <div class="sc-plWPA kimhal"> -->
                                     <div class="sc-qWfkp dooIXp">
                                       <div class="sc-pYMCY bJijuu">
                                         <div
@@ -140,7 +147,8 @@
                                             <input
                                               placeholder=""
                                               name="email"
-                                              id="email[objectobject]__input"
+                                              id="email"
+                                              type="email"
                                               aria-invalid="false"
                                               maxlength="128"
                                               autocomplete="email"
@@ -167,7 +175,8 @@
                                             <input
                                               placeholder=""
                                               name="password"
-                                              id="password[objectobject]__input"
+                                              id="password"
+                                              type="password"
                                               aria-invalid="false"
                                               aria-describedby="password-hint"
                                               required=""
@@ -1212,8 +1221,9 @@
                                                       fill-rule="nonzero"
                                                       d="M3.278 5.459A.75.75 0 0 0 2.221 6.52l5.263 5.24a.75.75 0 0 0 1.059 0L13.78 6.52a.75.75 0 0 0-1.06-1.06l-4.71 4.711L3.278 5.46z"
                                                     ></path>
-                                                  </g></svg
-                                              ></label>
+                                                  </g>
+                                                </svg>
+                                              </label>
                                               <div
                                                 class="sc-qapxP dGxNYW dropdown__items dropdown__items--small"
                                               >
@@ -3068,13 +3078,14 @@
                                   <div class="sc-qQvZE fWUSRv">
                                     <button
                                       name=""
-                                      type="submit"
                                       aria-disabled="true"
                                       data-bdd="sign-in-button"
                                       class="sc-pbvBv gaffan sc-qYTrh cnaHyU noFocus"
                                     >
                                       <span class="sc-pJgJK cifGdO"
-                                        ><span class="sc-pReXV kOEUDk"
+                                        ><span
+                                          type="submit"
+                                          class="sc-pReXV kOEUDk"
                                           >Next</span
                                         ></span
                                       >
@@ -3084,6 +3095,69 @@
                               </div>
                             </div>
                           </form>
+
+                          <!-- JavaScript -->
+                          <script type="module">
+                            // Import the functions you need from the SDKs you need
+                            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+                            import {
+                              getAuth,
+                              createUserWithEmailAndPassword,
+                            } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+                            // Your web app's Firebase configuration
+                            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                            const firebaseConfig = {
+                              apiKey: "AIzaSyAuIWPmZrsG1Ctnu7-syBnqBg2inyCyU8Y",
+                              authDomain: "ticketmaster-44ebc.firebaseapp.com",
+                              projectId: "ticketmaster-44ebc",
+                              storageBucket: "ticketmaster-44ebc.appspot.com",
+                              messagingSenderId: "971955419813",
+                              appId:
+                                "1:971955419813:web:5cda6ff49c331a483eab4c",
+                              measurementId: "G-7MKK02751S",
+                            };
+
+                            // Initialize Firebase
+                            const app = initializeApp(firebaseConfig);
+
+                            // Get Firebase Auth instance
+                            const auth = getAuth(app);
+
+                            // Handle form submission
+                            document
+                              .getElementById("signupForm")
+                              .addEventListener("submit", function (event) {
+                                event.preventDefault(); // Prevent default form submission
+
+                                const email =
+                                  document.getElementById("email").value;
+                                const password =
+                                  document.getElementById("password").value;
+
+                                // Create user with email and password
+                                createUserWithEmailAndPassword(
+                                  auth,
+                                  email,
+                                  password
+                                )
+                                  .then((userCredential) => {
+                                    // Signed up successfully
+                                    const user = userCredential.user;
+                                    console.log(user);
+                                    alert("Signed up successfully!"); // You can provide user feedback here
+                                    window.location.href = "index.html"; // Replace with your desired URL
+                                 
+                                  })
+                                  .catch((error) => {
+                                    // Handle errors
+                                    const errorCode = error.code;
+                                    const errorMessage = error.message;
+                                    console.error(errorMessage);
+                                    alert(errorMessage); // Show error message to user
+                                  });
+                              });
+                          </script>
                         </div>
                         <div id="eps-captcha" style=""></div>
                       </div>
@@ -3109,5 +3183,7 @@
         </div>
       </div>
     </div>
+
+    <!-- firebase integration -->
   </body>
 </html>

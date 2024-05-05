@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Authentication Example</title>
+  </head>
+  <body>
+    <!-- Sign Up Form -->
+    <form id="signupForm">
+      <input type="email" id="email" placeholder="Email" required /><br />
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        required
+      /><br />
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- JavaScript -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAuIWPmZrsG1Ctnu7-syBnqBg2inyCyU8Y",
+        authDomain: "ticketmaster-44ebc.firebaseapp.com",
+        projectId: "ticketmaster-44ebc",
+        storageBucket: "ticketmaster-44ebc.appspot.com",
+        messagingSenderId: "971955419813",
+        appId: "1:971955419813:web:5cda6ff49c331a483eab4c",
+        measurementId: "G-7MKK02751S",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      // Get Firebase Auth instance
+      const auth = getAuth(app);
+
+      // Handle form submission
+      document.getElementById("signupForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Create user with email and password
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed up successfully
+            const user = userCredential.user;
+            console.log(user);
+            alert("Signed up successfully!"); // You can provide user feedback here
+          })
+          .catch((error) => {
+            // Handle errors
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error(errorMessage);
+            alert(errorMessage); // Show error message to user
+          });
+      });
+    </script>
+  </body>
+</html>
