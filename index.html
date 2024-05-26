@@ -11,7 +11,7 @@
       Events
     </title>
     <!-- <link rel="canonical" href="https://www.ticketmaser.com/" /> -->
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css" />
     <meta
       name="description"
       content="Buy and sell tickets online for concerts, sports, theater, family and other events near you from Ticketmaster."
@@ -42,7 +42,7 @@
     <meta name="twitter:image" content="" />
     <link rel="dns-prefetch" href="https://af.monetate.net" />
     <link rel="dns-prefetch" href="https://sb.monetate.net" />
-   
+
     <style id="onetrust-style">
       #onetrust-banner-sdk {
         -ms-text-size-adjust: 100%;
@@ -5880,9 +5880,7 @@
                     d="M1 3.25h22v14.32l-3.08 3.18H1V3.25Zm1.5 1.5v4.64H4v-2.3l1.56-1.03 2.19 1.9V4.74H2.5Zm4.62 4.64L5.5 7.99v1.4h1.62Zm2.13-4.64v3.6l2.7-2.29L13.5 7.1v2.29h8V4.75H9.25ZM12 9.39v-1.4l-1.66 1.4H12Zm-5.13 1.5H2.5v8.36h5.25v-6.82l-2.09 3.92-1.32-.7 2.53-4.76Zm2.38 8.36h10.03l2.22-2.3V10.9H10.13l2.53 4.76-1.32.7-2.09-3.92v6.82Z"
                   ></path></svg
                 >Gift Cards</a
-              ><a
-                href="https://help.ticketmaser.com"
-                class="sc-97ftq7-3 cRTXTe"
+              ><a href="https://help.ticketmaser.com" class="sc-97ftq7-3 cRTXTe"
                 >Help</a
               >
             </div>
@@ -6000,6 +5998,7 @@
                   >Toggle search bar</span
                 ></button
               ><button
+                id="mySpan"
                 data-testid="accountLink"
                 aria-expanded="false"
                 class="sc-6wpn76-1 eIpoux"
@@ -6015,13 +6014,13 @@
                   <path
                     d="M8 6.5a4 4 0 1 1 8 0 4 4 0 0 1-8 0ZM12 1a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Zm6.49 12H5.43L1 16.9V23h22v-6.12L18.49 13ZM2.5 17.58 6 14.5h11.93l3.57 3.07v3.93h-19v-3.92Z"
                   ></path></svg
-                ><span  id="mySpan">Sign In/Register</span>
-                <script>
-                  document.getElementById("mySpan").onclick = function () {
-                    window.location.href = "signup.html"; // Replace with your desired URL
-                  };
-                </script>
+                ><span>Sign In/Register</span>
               </button>
+              <script>
+                document.getElementById("mySpan").onclick = function () {
+                  window.location.href = "signup.html"; // Replace with your desired URL
+                };
+              </script>
             </div>
           </div>
         </header>
@@ -6356,13 +6355,9 @@
                 aria-describedby=":R6eom: :R6eomH1:"
                 class="indexstyles__StyledButton-sc-83qv1q-0 jdbotF"
                 ><span class="indexstyles__FlexWrapper-sc-83qv1q-1 kCQEIv"
-                  ><span class=""
-                    >Find Tickets</span
-                  ></span
+                  ><span class="">Find Tickets</span></span
                 >
-              
-                </a
-              >
+              </a>
             </div>
           </div>
         </div>
@@ -13844,8 +13839,7 @@
           );
           if (
             !!my_tm_legacy &&
-            (google_tag_manager["rm"]["1310792"](251) ==
-              "my.ticketmaser.com" ||
+            (google_tag_manager["rm"]["1310792"](251) == "my.ticketmaser.com" ||
               google_tag_manager["rm"]["1310792"](252) == "my.ticketmaster.ca")
           ) {
             my_tm_legacy.appendChild(a);
