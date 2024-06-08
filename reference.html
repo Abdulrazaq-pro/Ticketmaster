@@ -3521,6 +3521,7 @@
                   >Toggle search bar</span
                 ></button
               ><button
+              id="mySpan"
                 data-testid="accountLink"
                 aria-expanded="false"
                 class="sc-6wpn76-1 eIpoux"
@@ -3544,12 +3545,12 @@
                   >Sign in/Register!</span
                 >
 
-                <script>
-                  document.getElementById("mySpan").onclick = function () {
-                    window.location.href = "signup.html"; // Replace with your desired URL
-                  };
-                </script>
               </button>
+              <script>
+                document.getElementById("mySpan").onclick = function () {
+                  window.location.href = "signup.html"; // Replace with your desired URL
+                };
+              </script>
             </div>
           </div>
         </header>
