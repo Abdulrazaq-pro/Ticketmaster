@@ -4027,29 +4027,37 @@
                               </li>
                               <li id="paypal-button-container"></li>
                               <script>
+                                let isPayPalButtonRendered = false;
+                        
                                 document.getElementById("first").addEventListener("click", function() {
-                                  paypal.Buttons({
-                                    createOrder: function(data, actions) {
-                                      return actions.order.create({
-                                        purchase_units: [{
-                                          amount: {
-                                            value: "29.50" // Set your desired amount here
-                                          }
-                                        }]
-                                      });
-                                    },
-                                    onApprove: function(data, actions) {
-                                      return actions.order.capture().then(function(details) {
-                                        alert("Transaction completed by " + details.payer.name.given_name);
-                                      });
-                                    },
-                                    onError: function(err) {
-                                      console.error(err);
-                                      alert("An error occurred during the transaction.");
+                                    if (!isPayPalButtonRendered) {
+                                        paypal.Buttons({
+                                            createOrder: function(data, actions) {
+                                                return actions.order.create({
+                                                    purchase_units: [{
+                                                        amount: {
+                                                            value: "29.50" // Set your desired amount here
+                                                        }
+                                                    }]
+                                                });
+                                            },
+                                            onApprove: function(data, actions) {
+                                                return actions.order.capture().then(function(details) {
+                                                    alert("Transaction completed by " + details.payer.name.given_name);
+                                                });
+                                            },
+                                            onError: function(err) {
+                                                console.error(err);
+                                                alert("An error occurred during the transaction.");
+                                            }
+                                        }).render("#paypal-button-container");
+                                        isPayPalButtonRendered = true;
+                                    } else {
+                                        document.getElementById("paypal-button-container").innerHTML = "";
+                                        isPayPalButtonRendered = false;
                                     }
-                                  }).render("#paypal-button-container");
                                 });
-                              </script>
+                            </script>
 
                               <li
                                 role="menuitem"
@@ -4059,8 +4067,10 @@
                                 data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="two"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
                                 >
@@ -4102,7 +4112,45 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="container2"></li>
+                                <script>
+                                  let isPayPalButton2 = false;
+                          
+                                  document.getElementById("two").addEventListener("click", function() {
+                                      if (!isPayPalButton2) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#container2");
+                                          isPayPalButton2 = true;
+                                      } else {
+                                          document.getElementById("container2").innerHTML = "";
+                                          isPayPalButton2 = false;
+                                      }
+                                  });
+                              </script>
                               </li>
+                              
+                            
+
+
+
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
@@ -4155,6 +4203,7 @@
                                   </div>
                                 </div>
                               </li>
+                            
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
@@ -4207,6 +4256,7 @@
                                   </div>
                                 </div>
                               </li>
+                            
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
@@ -4259,6 +4309,7 @@
                                   </div>
                                 </div>
                               </li>
+                             
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
