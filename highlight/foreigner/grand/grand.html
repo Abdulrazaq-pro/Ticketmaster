@@ -4073,6 +4073,7 @@
                                 id="two"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4112,7 +4113,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <div id="container2"></d>
+                                <li id="container2"></li>
                                 <script>
                                   let isPayPalButton2 = false;
                           
@@ -4145,19 +4146,23 @@
                                       }
                                   });
                               </script>
-                              </li>
+                                </li>
+                                
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-2"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="three"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4170,10 +4175,10 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec FL3 • Row HH"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
-                                            >Sec FL3 • Row HH</span
+                                            >Sec FL • Row HH</span
                                           >
                                         </div>
                                         <div
@@ -4189,7 +4194,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-2"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4197,20 +4202,57 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containerthree"></li>
+                                <script>
+                                  let isPayPalButtonthree = false;
+                          
+                                  document.getElementById("three").addEventListener("click", function() {
+                                      if (!isPayPalButtonthree) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containerthree");
+                                          isPayPalButtonthree = true;
+                                      } else {
+                                          document.getElementById("containerthree").innerHTML = "";
+                                          isPayPalButtonthree = false;
+                                      }
+                                  });
+                                </script>
                               </li>
+                                
                             
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-3"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="four"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4223,7 +4265,7 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec FL3 • Row JJ"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
                                             >Sec FL3 • Row JJ</span
@@ -4242,7 +4284,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-3"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4250,6 +4292,39 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containerfour"></li>
+                                <script>
+                                  let isPayPalButtonfour = false;
+                          
+                                  document.getElementById("four").addEventListener("click", function() {
+                                      if (!isPayPalButtonfour) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containerfour");
+                                          isPayPalButtonfour = true;
+                                      } else {
+                                          document.getElementById("containerfour").innerHTML = "";
+                                          isPayPalButtonfour = false;
+                                      }
+                                  });
+                                </script>
                               </li>
                             
                               <li
@@ -4257,13 +4332,16 @@
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-4"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="five"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4276,7 +4354,7 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec FL3 • Row KK"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
                                             >Sec FL3 • Row KK</span
@@ -4295,7 +4373,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-4"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4303,20 +4381,57 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containerfive"></li>
+                                <script>
+                                  let isPayPalButtonfive = false;
+                          
+                                  document.getElementById("five").addEventListener("click", function() {
+                                      if (!isPayPalButtonfive) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containerfive");
+                                          isPayPalButtonfive = true;
+                                      } else {
+                                          document.getElementById("containerfive").innerHTML = "";
+                                          isPayPalButtonfive = false;
+                                      }
+                                  });
+                                </script>
                               </li>
                              
+                              
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-5"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="six"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4329,319 +4444,7 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec FL3 • Row LL"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL3 • Row LL</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-5"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-6"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL1 • Row MM"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL1 • Row MM</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-6"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-7"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL1 • Row NN"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL1 • Row NN</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-7"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-8"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL1 • Row PP"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL1 • Row PP</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-8"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-9"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL1 • Row QQ"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL1 • Row QQ</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-9"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-10"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL3 • Row MM"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL3 • Row MM</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-10"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-11"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL3 • Row NN"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
                                             >Sec FL3 • Row NN</span
@@ -4660,7 +4463,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-11"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4668,19 +4471,56 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containersix"></li>
+                                <script>
+                                  let isPayPalButtonsix = false;
+                          
+                                  document.getElementById("six").addEventListener("click", function() {
+                                      if (!isPayPalButtonsix) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containersix");
+                                          isPayPalButtonsix = true;
+                                      } else {
+                                          document.getElementById("containersix").innerHTML = "";
+                                          isPayPalButtonsix = false;
+                                      }
+                                  });
+                                </script>
                               </li>
+                              
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-12"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="seven"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4693,7 +4533,7 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec FL3 • Row PP"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
                                             >Sec FL3 • Row PP</span
@@ -4712,7 +4552,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-12"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4720,19 +4560,56 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containerseven"></li>
+                                <script>
+                                  let isPayPalButtonseven = false;
+                          
+                                  document.getElementById("seven").addEventListener("click", function() {
+                                      if (!isPayPalButtonseven) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containerseven");
+                                          isPayPalButtonseven = true;
+                                      } else {
+                                          document.getElementById("containerseven").innerHTML = "";
+                                          isPayPalButtonseven = false;
+                                      }
+                                  });
+                                </script>
                               </li>
+
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-13"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="eight"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4745,7 +4622,7 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec FL3 • Row QQ"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
                                             >Sec FL3 • Row QQ</span
@@ -4764,7 +4641,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-13"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4772,19 +4649,56 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containereight"></li>
+                                <script>
+                                  let isPayPalButtoneight = false;
+                          
+                                  document.getElementById("eight").addEventListener("click", function() {
+                                      if (!isPayPalButtoneight) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containereight");
+                                          isPayPalButtoneight = true;
+                                      } else {
+                                          document.getElementById("containereight").innerHTML = "";
+                                          isPayPalButtoneight = false;
+                                      }
+                                  });
+                                </script>
                               </li>
+
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-14"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="nine"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4797,10 +4711,10 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec 209 • Row N"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
-                                            >Sec 209 • Row N</span
+                                            >Sec FL3 • Row MM</span
                                           >
                                         </div>
                                         <div
@@ -4816,7 +4730,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-14"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4824,19 +4738,56 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containernine"></li>
+                                <script>
+                                  let isPayPalButtonnine = false;
+                          
+                                  document.getElementById("nine").addEventListener("click", function() {
+                                      if (!isPayPalButtonnine) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containernine");
+                                          isPayPalButtonnine = true;
+                                      } else {
+                                          document.getElementById("containernine").innerHTML = "";
+                                          isPayPalButtonnine = false;
+                                      }
+                                  });
+                                </script>
                               </li>
+
                               <li
                                 role="menuitem"
                                 aria-haspopup="dialog"
                                 data-bdd="quick-picks-list-item-primary-1"
                                 tabindex="-1"
-                                data-index="qp-15"
+                                data-index="qp-1"
                                 data-price="$29.50"
                                 class="sc-1cro0l1-0 bcJoCP"
+                                
                               >
                                 <div
+                                id="ten"
                                   data-analytics="offer-card"
                                   class="sc-1cro0l1-1 fdcYqN"
+                                  
                                 >
                                   <div
                                     data-bdd="quick-pick-ticket-info"
@@ -4849,10 +4800,10 @@
                                       <div class="sc-stoanl-1 fmuNqB">
                                         <div class="sc-stoanl-5 iDMuKj">
                                           <span
-                                            aria-label="Sec 209 • Row P"
+                                            aria-label="Sec FL1 • Row LL"
                                             data-bdd="quick-pick-item-desc"
                                             title="Section Description"
-                                            >Sec 209 • Row P</span
+                                            >Sec FL3 • Row NN</span
                                           >
                                         </div>
                                         <div
@@ -4868,7 +4819,7 @@
                                     <button
                                       tabindex="-1"
                                       data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-15"
+                                      id="quickpick-buy-button-qp-1"
                                       data-bdd="quick-pick-price-button"
                                       class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
                                     >
@@ -4876,1170 +4827,43 @@
                                     </button>
                                   </div>
                                 </div>
+                                <li id="containerten"></li>
+                                <script>
+                                  let isPayPalButtonten = false;
+                          
+                                  document.getElementById("ten").addEventListener("click", function() {
+                                      if (!isPayPalButtonten) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containerten");
+                                          isPayPalButtonten = true;
+                                      } else {
+                                          document.getElementById("containerten").innerHTML = "";
+                                          isPayPalButtonten = false;
+                                      }
+                                  });
+                                </script>
                               </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-16"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec 209 • Row Q"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec 209 • Row Q</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-16"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-17"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec 221 • Row P"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec 221 • Row P</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-17"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-18"
-                                data-price="$29.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec 221 • Row Q"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec 221 • Row Q</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-18"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $29.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-19"
-                                data-price="$35.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 227 • Row K"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 227 • Row K</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-19"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $35.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-20"
-                                data-price="$40.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 227 • Row P"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 227 • Row P</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-20"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $40.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-21"
-                                data-price="$41.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 203 • Row Q"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 203 • Row Q</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-21"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $41.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-22"
-                                data-price="$43.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 224 • Row P"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 224 • Row P</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-22"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $43.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-23"
-                                data-price="$43.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 225 • Row L"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 225 • Row L</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-23"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $43.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-24"
-                                data-price="$44.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 223 • Row M"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 223 • Row M</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-24"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $44.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-25"
-                                data-price="$44.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 226 • Row P"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 226 • Row P</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-25"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $44.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-26"
-                                data-price="$45.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 224 • Row P"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 224 • Row P</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-26"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $45.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-27"
-                                data-price="$45.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 226 • Row K"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 226 • Row K</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-27"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $45.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-28"
-                                data-price="$45.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 204 • Row P"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 204 • Row P</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-28"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $45.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-29"
-                                data-price="$46.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 225 • Row K"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 225 • Row K</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-29"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $46.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-30"
-                                data-price="$46.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 226 • Row N"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 226 • Row N</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-30"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $46.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-31"
-                                data-price="$47.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 203 • Row K"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 203 • Row K</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-31"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $47.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-32"
-                                data-price="$48.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 225 • Row N"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 225 • Row N</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-32"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $48.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-33"
-                                data-price="$48.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 226 • Row J"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 226 • Row J</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-33"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $48.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-34"
-                                data-price="$49.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 205 • Row M"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 205 • Row M</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-34"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $49.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-resale"
-                                tabindex="-1"
-                                data-index="qp-35"
-                                data-price="$49.00"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <span
-                                      aria-label="Sec 204 • Row J"
-                                      data-bdd="quick-pick-item-desc"
-                                      title="Section Description"
-                                      >Sec 204 • Row J</span
-                                    >
-                                    <div class="ticket-type-description">
-                                      <span
-                                        data-bdd="quick-picks-resale-branding"
-                                        >Verified Resale Ticket</span
-                                      >
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div class="sc-r4xcs3-4 eZWvRf">
-                                      <button
-                                        tabindex="-1"
-                                        data-analytics="quick-pick"
-                                        id="quickpick-buy-button-qp-35"
-                                        data-bdd="quick-pick-price-button"
-                                        class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                      >
-                                        $49.00</button
-                                      ><span
-                                        data-bdd="quick-picks_delivery-title-resale"
-                                      ></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-36"
-                                data-price="$49.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL3 • Row J"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL3 • Row J</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-36"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $49.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-37"
-                                data-price="$49.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL3 • Row L"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL3 • Row L</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-37"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $49.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-38"
-                                data-price="$49.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL3 • Row M"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL3 • Row M</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-38"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $49.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                role="menuitem"
-                                aria-haspopup="dialog"
-                                data-bdd="quick-picks-list-item-primary-1"
-                                tabindex="-1"
-                                data-index="qp-39"
-                                data-price="$49.50"
-                                class="sc-1cro0l1-0 bcJoCP"
-                              >
-                                <div
-                                  data-analytics="offer-card"
-                                  class="sc-1cro0l1-1 fdcYqN"
-                                >
-                                  <div
-                                    data-bdd="quick-pick-ticket-info"
-                                    class="sc-r4xcs3-2 crgBBa"
-                                  >
-                                    <div
-                                      data-bdd="quick-picks-primary-branding"
-                                      class="sc-stoanl-0 hZhsYr"
-                                    >
-                                      <div class="sc-stoanl-1 fmuNqB">
-                                        <div class="sc-stoanl-5 iDMuKj">
-                                          <span
-                                            aria-label="Sec FL3 • Row N"
-                                            data-bdd="quick-pick-item-desc"
-                                            title="Section Description"
-                                            >Sec FL3 • Row N</span
-                                          >
-                                        </div>
-                                        <div
-                                          title="Ticket Type"
-                                          class="sc-stoanl-6 iGcvag"
-                                        >
-                                          <span>Standard Ticket</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <button
-                                      tabindex="-1"
-                                      data-analytics="quick-pick"
-                                      id="quickpick-buy-button-qp-39"
-                                      data-bdd="quick-pick-price-button"
-                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
-                                    >
-                                      $49.50
-                                    </button>
-                                  </div>
-                                </div>
-                              </li>
+
+                              <!-- ////.... -->
+                              
                             </ul>
                           </div>
                         </div>

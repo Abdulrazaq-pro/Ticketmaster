@@ -1,0 +1,88 @@
+<li
+                                role="menuitem"
+                                aria-haspopup="dialog"
+                                data-bdd="quick-picks-list-item-primary-1"
+                                tabindex="-1"
+                                data-index="qp-1"
+                                data-price="$29.50"
+                                class="sc-1cro0l1-0 bcJoCP"
+                                
+                              >
+                                <div
+                                id="ten"
+                                  data-analytics="offer-card"
+                                  class="sc-1cro0l1-1 fdcYqN"
+                                  
+                                >
+                                  <div
+                                    data-bdd="quick-pick-ticket-info"
+                                    class="sc-r4xcs3-2 crgBBa"
+                                  >
+                                    <div
+                                      data-bdd="quick-picks-primary-branding"
+                                      class="sc-stoanl-0 hZhsYr"
+                                    >
+                                      <div class="sc-stoanl-1 fmuNqB">
+                                        <div class="sc-stoanl-5 iDMuKj">
+                                          <span
+                                            aria-label="Sec FL1 • Row LL"
+                                            data-bdd="quick-pick-item-desc"
+                                            title="Section Description"
+                                            >Sec FL3 • Row NN</span
+                                          >
+                                        </div>
+                                        <div
+                                          title="Ticket Type"
+                                          class="sc-stoanl-6 iGcvag"
+                                        >
+                                          <span>Standard Ticket</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <button
+                                      tabindex="-1"
+                                      data-analytics="quick-pick"
+                                      id="quickpick-buy-button-qp-1"
+                                      data-bdd="quick-pick-price-button"
+                                      class="sc-135y93v-1 sc-r4xcs3-0 jrwCqw ccsizk"
+                                    >
+                                      $29.50
+                                    </button>
+                                  </div>
+                                </div>
+                                <li id="containerten"></li>
+                                <script>
+                                  let isPayPalButtonten = false;
+                          
+                                  document.getElementById("ten").addEventListener("click", function() {
+                                      if (!isPayPalButtonten) {
+                                          paypal.Buttons({
+                                              createOrder: function(data, actions) {
+                                                  return actions.order.create({
+                                                      purchase_units: [{
+                                                          amount: {
+                                                              value: "29.50" // Set your desired amount here
+                                                          }
+                                                      }]
+                                                  });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                  return actions.order.capture().then(function(details) {
+                                                      alert("Transaction completed by " + details.payer.name.given_name);
+                                                  });
+                                              },
+                                              onError: function(err) {
+                                                  console.error(err);
+                                                  alert("An error occurred during the transaction.");
+                                              }
+                                          }).render("#containerten");
+                                          isPayPalButtonten = true;
+                                      } else {
+                                          document.getElementById("containerten").innerHTML = "";
+                                          isPayPalButtonten = false;
+                                      }
+                                  });
+                                </script>
+                              </li>
