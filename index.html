@@ -42,6 +42,36 @@
     <meta name="twitter:image" content="" />
     <link rel="dns-prefetch" href="https://af.monetate.net" />
     <link rel="dns-prefetch" href="https://sb.monetate.net" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Ticketmaster US",
+        "url": "https://www.ticketmaster.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.ticketmaster.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Ticketmaster US",
+        "url": "https://www.ticketmaster.com/",
+        "logo": "https://uk.tmconst.com/production-10-73-0-8003960/images/logo/ticketmaster_black.svg",
+        "sameAs": [
+          "http://facebook.com/Ticketmaster",
+          "http://twitter.com/ticketmaster",
+          "https://blog.ticketmaster.com/",
+          "https://www.youtube.com/Ticketmaster",
+          "http://instagram.com/ticketmaster"
+        ]
+      }
+    </script>
     <meta charset="utf-8" />
     
     <meta name="next-head-count" content="20" />
@@ -5952,7 +5982,13 @@
                 class="sc-qojxtn-0 ddaZKb"
                 >Concerts</a
               ><a
-              href="#sport" class="sc-qojxtn-0 ddaZKb">Sports</a>
+                href="#sports"
+                role="menuitem"
+                aria-expanded="false"
+                tabindex="0"
+                aria-haspopup="menu"
+                class="sc-qojxtn-0 ddaZKb"
+                >Sports</a>
                 <a
                 href="#entertainment"
                 role="menuitem"
@@ -5960,7 +5996,8 @@
                 tabindex="0"
                 aria-haspopup="menu"
                 class="sc-qojxtn-0 ddaZKb"
-                >Arts, Theater &amp; Comedy</a><a
+                >Arts, Theater &amp; Comedy</a
+              ><a
                 href="#family"
                 role="menuitem"
                 aria-expanded="false"
@@ -9001,7 +9038,7 @@
         </div>
       </div>
     </div>
-  
+ 
     <div id="modals" data-testid="modals"></div>
     <next-route-announcer
       ><p
@@ -9024,16 +9061,17 @@
       ></p
     ></next-route-announcer>
    
-    
+    <div style="display: none; visibility: hidden">
+      
     <iframe
-      id="GTMWBSWHSR-lnsdifb"
+      id="GTMWBSWHSR-lnetwq"
       src="about:blank"
       width="1"
       height="1"
       frameborder="0"
       style="display: none"
     ></iframe>
-    
+   
     <iframe
       allow="join-ad-interest-group"
       data-tagging-id="AW-997466241"
